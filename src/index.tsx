@@ -1,10 +1,9 @@
 
 import React, { useEffect } from "react";
-import {
-  Text,
-  StatusBar,
-} from "react-native";
 import SplashScreen from "react-native-splash-screen";
+
+import ThemeContainer from "./contexts/ThemeContext/ThemeContainer";
+import Main from "./views/Main/Main";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -12,10 +11,9 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <StatusBar barStyle="dark-content" backgroundColor="#000" />
-      <Text>Welcome</Text>
-    </>
+    <ThemeContainer>
+      <Main />
+    </ThemeContainer>
   );
 };
 

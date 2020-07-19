@@ -10,10 +10,17 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@ant-design/react-native": "^4.0.1",
+    "@react-native-community/cameraroll": "^4.0.0",
+    "@react-native-community/picker": "^1.6.5",
+    "@react-native-community/segmented-control": "^2.1.0",
+    "@react-native-community/slider": "^3.0.3",
+    "@react-native-community/viewpager": "^4.1.0",
     "react": "16.13.1",
     "react-native": "0.63.0",
     "react-native-splash-screen": "^3.2.0",
-    "react-native-unimodules": "^0.10.1"
+    "react-native-unimodules": "^0.10.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -22,6 +29,7 @@
     "@types/jest": "^25.2.3",
     "@types/react-native": "^0.62.0",
     "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^25.1.0",
