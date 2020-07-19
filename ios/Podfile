@@ -10,6 +10,7 @@ target 'billSplitting' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'billSplittingTests' do
     inherit! :complete
     # Pods for testing
