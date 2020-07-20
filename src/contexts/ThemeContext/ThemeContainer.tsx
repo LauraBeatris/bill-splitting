@@ -6,11 +6,11 @@ import antTheme from "../../styles/antTheme";
 import theme from "../../styles/theme";
 
 const ThemeContainer: React.FC = ({ children }) => (
-  <AntThemeProvider theme={antTheme}>
-    <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
+    <AntThemeProvider theme={antTheme}>
       {children}
-    </ThemeProvider>
-  </AntThemeProvider>
+    </AntThemeProvider>
+  </ThemeProvider>
 );
 
 export default ThemeContainer;
