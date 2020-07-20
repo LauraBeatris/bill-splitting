@@ -18,8 +18,10 @@
     "@react-native-community/viewpager": "^4.1.0",
     "react": "16.13.1",
     "react-native": "0.63.0",
+    "react-native-iphone-x-helper": "^1.2.1",
     "react-native-splash-screen": "^3.2.0",
     "react-native-unimodules": "^0.10.1",
+    "react-native-vector-icons": "^7.0.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/jest": "^25.2.3",
     "@types/react-native": "^0.62.0",
+    "@types/react-native-vector-icons": "^6.4.5",
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^2.27.0",

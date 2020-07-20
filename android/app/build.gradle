@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile
 
@@ -219,3 +220,19 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+project.ext.vectoricons = [
+    iconFontNames: [
+      'MaterialIcons.ttf',
+      'EvilIcons.ttf',
+      'Feather.ttf',
+      'FontAwesome.ttf',
+      'FontAwesome5_Brands.ttf',
+      'FontAwesome5_Regular.ttf',
+      'FontAwesome5_Solid.ttf',
+      'Ionicons.ttf',
+      'MaterialIcons.ttf',
+    ]
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
