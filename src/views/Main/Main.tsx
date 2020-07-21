@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+import { usePopup } from "../../contexts/popup/PopupContext";
 import {
   Container,
   Content,
@@ -13,10 +14,13 @@ import Button from "../../components/Button/Button";
 import AddUserPopup from "../../components/AddUserPopup/AddUserPopup";
 
 const Main: React.FC = () => {
+  const [openPopup] = usePopup();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const togglePopup = (): void => {
-    setIsPopupOpen(prev => !prev);
+  const handlePopup = (): void => {
+    openPopup({
+      component: AddUserPopup,
+    });
   };
 
   return (
@@ -37,11 +41,10 @@ const Main: React.FC = () => {
             </Title>
           </Content>
 
-          <Button onPress={togglePopup}>
+          <Button onPress={handlePopup}>
             <Icon name="plus" size={24} />
           </Button>
         </Container>
-        <AddUserPopup isPopupOpen={isPopupOpen} onClose={togglePopup} />
       </KeyboardAvoidingView>
     </BackgroundImage>
   );
