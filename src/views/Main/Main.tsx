@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -15,7 +15,6 @@ import AddUserPopup from "../../components/AddUserPopup/AddUserPopup";
 
 const Main: React.FC = () => {
   const [openPopup] = usePopup();
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handlePopup = (): void => {
     openPopup({

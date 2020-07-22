@@ -1,23 +1,27 @@
 
-export type ShowPopupHandler = (args: PopupState) => void;
+export interface PopupState {
+  isOpen: boolean;
+  componentProps?: {};
+  onShow: null | (() => void);
+  onHide: null | (() => void);
+  component: React.ComponentType<ComponentProps> | null;
+}
+export interface ShowPopupHandlerArguments extends Omit<PopupState, "isOpen" | "onShow"| "onHide"> {
+  isOpen?: boolean;
+  onShow?: null | (() => void);
+  onHide?: null | (() => void);
+}
+
+export type ShowPopupHandler = (args: ShowPopupHandlerArguments) => void;
 export type HidePopupHandler = () => void;
 
-export interface PopupComponentProps {
+export interface ComponentProps {
   showPopup: ShowPopupHandler;
   hidePopup: HidePopupHandler;
 }
 
-export interface PopupState {
+export type PopupContextState = {
   isOpen: boolean;
-  componentProps: {};
-  isCloseable: boolean;
-  onShow: null | (() => void);
-  onHide: null | (() => void);
-  component: React.ComponentType<PopupComponentProps> | null;
 }
 
-export type PopupContextState = Pick<PopupState, "isOpen">
-
-export type PopupContextHandlers = ShowPopupHandler | HidePopupHandler
-
-export type PopupContextPayload = (PopupContextHandlers | PopupContextState)[]
+export type PopupContextPayload = [ShowPopupHandler, HidePopupHandler, PopupContextState]

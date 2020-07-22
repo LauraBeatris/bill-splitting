@@ -3,7 +3,7 @@ import { InputItem, Button } from "@ant-design/react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import { Title } from "../../styles/components/Typography";
-import { Content, styles } from "./styles";
+import { styles } from "./styles";
 
 interface AddUserPopupProps {
   hidePopup: () => void;

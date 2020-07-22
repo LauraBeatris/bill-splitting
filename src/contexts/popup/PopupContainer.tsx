@@ -6,15 +6,14 @@ import React, {
 
 import Popup from "../../components/Popup";
 import { PopupProvider } from "./PopupContext";
-import { PopupState } from "./types";
+import { PopupState, ShowPopupHandlerArguments, PopupContextPayload } from "./types";
 
 const INITIAL_CONTENT_STATE: PopupState = {
   isOpen: false,
-  component: null,
   onShow: null,
   onHide: null,
+  component: null,
   componentProps: {},
-  isCloseable: false,
 };
 
 const PopupContainer: React.FC = ({ children }) => {
@@ -23,14 +22,12 @@ const PopupContainer: React.FC = ({ children }) => {
   const showPopup = useCallback(({
     componentProps,
     component,
-    isCloseable = false,
-    onHide,
-    onShow,
-  }: PopupState) => {
+    onHide = null,
+    onShow = null,
+  }: ShowPopupHandlerArguments) => {
     setPopupState({
       componentProps,
       isOpen: true,
-      isCloseable,
       component,
       onHide,
       onShow,
@@ -48,9 +45,7 @@ const PopupContainer: React.FC = ({ children }) => {
     if (popupState?.onShow) {
       popupState.onShow();
     }
-  }, [
-    popupState,
-  ]);
+  }, [popupState]);
 
   const handleOnHide = useCallback(() => {
     if (popupState?.onHide) {
@@ -58,20 +53,22 @@ const PopupContainer: React.FC = ({ children }) => {
     }
 
     setPopupState(INITIAL_CONTENT_STATE);
-  }, [
-    popupState,
-  ]);
+  }, [popupState]);
 
-  const payload = useMemo(() => [
+  const { isOpen } = popupState;
+
+  const payload = useMemo<PopupContextPayload>(() => (
+    [
+      showPopup,
+      hidePopup,
+      {
+        isOpen,
+      },
+    ]
+  ), [
     showPopup,
     hidePopup,
-    {
-      isOpen: popupState?.isOpen,
-    },
-  ], [
-    hidePopup,
-    showPopup,
-    popupState,
+    isOpen,
   ]);
 
   const Component = popupState?.component;
