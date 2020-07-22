@@ -3,11 +3,10 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-import Popup from "react-native-modal";
 
+import Popup from "../../components/Popup";
 import { PopupProvider } from "./PopupContext";
 import { PopupState } from "./types";
-import { PopupContent, styles } from "./styles";
 
 const INITIAL_CONTENT_STATE: PopupState = {
   isOpen: false,
@@ -81,24 +80,20 @@ const PopupContainer: React.FC = ({ children }) => {
   return (
     <PopupProvider value={payload}>
       <Popup
-        isVisible={popupState.isOpen}
-        avoidKeyboard
-        onBackdropPress={hidePopup}
-        swipeDirection={["down"]}
-        onSwipeComplete={hidePopup}
-        onModalShow={handleOnShow}
-        onModalHide={handleOnHide}
-        style={styles.modal}
+        isOpen={popupState.isOpen}
+        hidePopup={hidePopup}
+        handleOnShow={handleOnShow}
+        handleOnHide={handleOnHide}
       >
-        <PopupContent>
-          {Component && (
+        {
+          Component && (
             <Component
               hidePopup={hidePopup}
               showPopup={showPopup}
               {...componentProps}
             />
-          )}
-        </PopupContent>
+          )
+        }
       </Popup>
 
       {children}
