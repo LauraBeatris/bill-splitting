@@ -33,7 +33,7 @@ const antTheme = {
 
   border_color_base: "#dddddd",
 
-  font_size_icontext: 10,
+  font_size_icontext: 20,
   font_size_caption_sm: 12,
   font_size_base: 14,
   font_size_subhead: 15,
@@ -62,11 +62,11 @@ const antTheme = {
   line_height_base: 1,
   line_height_paragraph: 1.5,
 
-  icon_size_xxs: 15,
-  icon_size_xs: 18,
-  icon_size_sm: 21,
-  icon_size_md: 22,
-  icon_size_lg: 36,
+  icon_size_xxs: 20,
+  icon_size_xs: 24,
+  icon_size_sm: 32,
+  icon_size_md: 42,
+  icon_size_lg: 52,
   ease_in_out_quint: "cubic_bezier(0.86, 0, 0.07, 1)",
 
   actionsheet_item_height: 50,
@@ -116,10 +116,10 @@ const antTheme = {
 
   toast_fill: "rgba(0, 0, 0, .8)",
 
-  search_bar_fill: "#efeff4",
+  search_bar_fill: "#fff",
   search_bar_height: 44,
-  search_bar_input_height: 28,
-  search_bar_font_size: 15,
+  search_bar_input_height: 50,
+  search_bar_font_size: 24,
   search_color_icon: "#bbbbbb",
 
   notice_bar_fill: "#fffada",
