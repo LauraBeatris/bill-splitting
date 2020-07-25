@@ -21,7 +21,8 @@ const bills: Bill[] = [
     id: 3,
     user: users[2],
     value: 35,
-  }, {
+  },
+  {
     id: 4,
     user: users[3],
     value: 12,

@@ -29,7 +29,7 @@ export const Badge = styled.View<ItemProps>`
 `;
 
 interface AvatarProps {
-  isBillCardSelected: boolean;
+  isBillCardSelected?: boolean;
   selectedColor?: string;
 }
 

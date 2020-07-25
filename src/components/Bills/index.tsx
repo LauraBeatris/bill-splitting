@@ -16,8 +16,8 @@ const Bills: React.FC = () => {
   const renderItem = useCallback(({ item }) => (
     <BillCard
       id={item.id}
-      name={item.name}
-      icon={item.icon}
+      name={item.user.name}
+      icon={item.user.icon}
       value={item.value}
       isSelected={item.id === selectedBill?.id}
       handleSlider={handleSlider(item)}
