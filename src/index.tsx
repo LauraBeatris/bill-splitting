@@ -4,6 +4,7 @@ import SplashScreen from "react-native-splash-screen";
 
 import ThemeContainer from "./contexts/theme/ThemeContainer";
 import PopupContainer from "./contexts/popup/PopupContainer";
+import BillContainer from "./contexts/bills/BillsContainer";
 import Main from "./views/Main/Main";
 
 const App: React.FC = () => {
@@ -14,7 +15,9 @@ const App: React.FC = () => {
   return (
     <ThemeContainer>
       <PopupContainer>
-        <Main />
+        <BillContainer>
+          <Main />
+        </BillContainer>
       </PopupContainer>
     </ThemeContainer>
   );
