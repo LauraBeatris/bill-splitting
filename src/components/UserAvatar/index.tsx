@@ -6,10 +6,11 @@ import { useTheme } from "../../contexts/theme/ThemeContext";
 import { Badge, IconWrapper, Avatar } from "./styles";
 
 interface UserAvatarProps {
-  isBillCardSelected: boolean;
-  selectedColor: string;
-  setIsBillPaid: Dispatch<SetStateAction<boolean>>;
+  isBillCardSelected?: boolean;
+  selectedColor?: string;
+  setIsBillPaid?: Dispatch<SetStateAction<boolean>>;
   avatarSource: ImageSourcePropType;
+  selectable: boolean;
   onPress?: () => void;
 }
 
@@ -18,6 +19,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
   selectedColor,
   setIsBillPaid,
   avatarSource,
+  selectable = true,
   onPress,
 }) => {
   const theme = useTheme();
@@ -25,7 +27,10 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 
   const handlePress = (): void => {
     setIsSelected(prev => !prev);
-    setIsBillPaid(prev => !prev);
+
+    if (setIsBillPaid) {
+      setIsBillPaid(prev => !prev);
+    }
 
     if (onPress) {
       onPress();
@@ -38,12 +43,16 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 
   return (
     <IconWrapper onPress={handlePress}>
-      <Badge
-        isSelected={isSelected}
-        selectedColor={selectedColor}
-      >
-        <FontAwesomeIcon name="check" color={iconColor} />
-      </Badge>
+      {
+        selectable && (
+          <Badge
+            isSelected={isSelected}
+            selectedColor={selectedColor}
+          >
+            <FontAwesomeIcon name="check" color={iconColor} />
+          </Badge>
+        )
+      }
 
       <Avatar
         source={avatarSource}

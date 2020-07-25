@@ -6,7 +6,7 @@ export const IconWrapper = styled.TouchableOpacity`
 `;
 
 interface ItemProps {
-  selectedColor: string;
+  selectedColor?: string;
   isSelected: boolean;
 }
 
@@ -22,13 +22,15 @@ export const Badge = styled.View<ItemProps>`
   justify-content: center;
 
   ${({ isSelected, selectedColor }) => css`
-    background-color: ${isSelected ? selectedColor : "#FFF"};
+    background-color: ${(
+    isSelected && selectedColor ? selectedColor : "#FFF"
+  )};
   `};
 `;
 
 interface AvatarProps {
   isBillCardSelected: boolean;
-  selectedColor: string;
+  selectedColor?: string;
 }
 
 export const Avatar = styled.Image<AvatarProps>`
@@ -39,8 +41,14 @@ export const Avatar = styled.Image<AvatarProps>`
   border-width: 4px;
   border-color: ${({ theme }) => theme.colors.grayLight};
 
-  ${({ isBillCardSelected, selectedColor }) => isBillCardSelected && css`
+  ${({
+    isBillCardSelected,
+    selectedColor,
+    theme,
+  }) => isBillCardSelected && css`
     border-width: 4px;
-    border-color: ${transparentize(0.7, selectedColor)};
+    border-color: ${(
+    transparentize(0.7, selectedColor || theme.colors.dark)
+  )};
   `};
 `;
