@@ -26,7 +26,6 @@ const Main: React.FC = () => {
   };
 
   return (
-
     <Container>
       <Content>
         <Title fontSize={32}>
