@@ -3,8 +3,10 @@ import { ImageSourcePropType } from "react-native";
 import { Flex, Slider } from "@ant-design/react-native";
 
 import { useTheme } from "../../contexts/theme/ThemeContext";
-import getColorById from "../../utils/getColorById";
+import { useBills } from "../../contexts/bills/BillsContext";
 import { Text } from "../../styles/components/Typography";
+import getColorById from "../../utils/getColorById";
+import { MIN_BILL_VALUE, MAX_BILL_VALUE } from "../../constants/billValues";
 import UserAvatar from "../UserAvatar";
 import { Container, Content, IsPaidContainer } from "./styles";
 
@@ -12,7 +14,7 @@ interface UserBillProps {
   id: number;
   name: string;
   icon: ImageSourcePropType;
-  bill: number;
+  value: number;
   isSelected: boolean;
   handleSlider: () => void;
 }
@@ -21,13 +23,24 @@ const UserBill: React.FC<UserBillProps> = ({
   id,
   name,
   icon,
-  bill,
+  value,
   isSelected,
   handleSlider,
 }) => {
   const theme = useTheme();
-  const color = getColorById(id);
+  const { payBill, updateBillValue } = useBills();
+
   const [isBillPaid, setIsBillPaid] = useState(false);
+
+  const color = getColorById(id);
+
+  const handleBillChange = (billValue: number): void => {
+    updateBillValue({ id, value: Math.ceil(billValue) });
+  };
+
+  const handlePayBill = (): void => {
+    payBill({ id, value });
+  };
 
   return (
     <Container
@@ -40,6 +53,7 @@ const UserBill: React.FC<UserBillProps> = ({
           avatarSource={icon}
           isBillCardSelected={isSelected}
           setIsBillPaid={setIsBillPaid}
+          onPress={handlePayBill}
         />
       </Flex>
 
@@ -64,7 +78,7 @@ const UserBill: React.FC<UserBillProps> = ({
                 fontFamily="Roboto-Regular"
               >
                 $
-                {bill}
+                {value}
               </Text>
             )
           }
@@ -75,6 +89,10 @@ const UserBill: React.FC<UserBillProps> = ({
             <Slider
               minimumTrackTintColor={color}
               onAfterChange={handleSlider}
+              value={value}
+              onChange={handleBillChange}
+              min={MIN_BILL_VALUE}
+              max={MAX_BILL_VALUE}
             />
           )
         }
