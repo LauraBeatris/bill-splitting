@@ -10,7 +10,9 @@ const BillsContainer: React.FC = ({ children }) => {
   const [paidBills, setPaidBills] = useState<PaidBill[]>([]);
 
   const handleSearch = useCallback((searchText: string) => {
-    setBills(initialBills.filter(bill => bill.name.match(searchText)));
+    setBills(initialBills.filter(bill => (
+      bill.user.name.match(searchText)
+    )));
   }, []);
 
   const updateBillValue = useCallback(({ id, value }) => {
