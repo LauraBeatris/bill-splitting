@@ -3,12 +3,17 @@ import styled, { css } from "styled-components/native";
 interface TypographyProps {
   fontSize?: number;
   fontFamily?: string;
+  fontWeight?: string;
   color?: string;
 }
 
 export const Title = styled.Text<TypographyProps>`
-  ${({ theme, fontSize }) => css`
-    font-family: ${theme.fonts.families.bold};
+  ${({
+    theme,
+    fontSize,
+    fontWeight = "bold",
+  }) => css`
+    font-family: ${theme.fonts.families[fontWeight]};
     font-size: ${fontSize || theme.fonts.sizes.base}px;
     color: ${theme.colors.dark};
   `}
