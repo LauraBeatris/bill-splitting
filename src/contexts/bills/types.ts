@@ -10,6 +10,6 @@ export type BillsContextPayload = {
   payBill: (args: PaidBill) => void;
   paidAmount: number;
   totalOutcome: number;
-  updateBillValue: number;
+  updateBillValue: (args: PaidBill) => void;
   handleSearch: (searchText: string) => void;
 }
