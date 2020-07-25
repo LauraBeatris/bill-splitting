@@ -6,7 +6,11 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ onPress, children, ...rest }) => (
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onPress,
+  ...rest
+}) => (
   <Container
     onPress={onPress}
     {...rest}

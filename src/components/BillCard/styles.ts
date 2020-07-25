@@ -28,34 +28,13 @@ export const Content = styled.View`
   padding: 12px 10px 0 16px;
 `;
 
-export const IconWrapper = styled.TouchableOpacity`
-  position: relative;
-`;
-
-export const Badge = styled.View<ItemProps>`
-  height: 24px;
-  width: 24px;
-  border-radius: 12px;
-  position: absolute;
-  right: -8px;
-  top: 0;
-  z-index: 10;
-  align-items: center;
+export const IsPaidContainer = styled.View`
+  background-color: ${({ theme }) => theme.colors.green};
+  margin-left: auto;
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
   justify-content: center;
-
-  ${({ isSelected, selectedColor }) => css`
-    background-color: ${isSelected ? selectedColor : "#FFF"};
-  `};
-`;
-
-export const Avatar = styled.Image<ItemProps>`
-  height: 64px;
-  width: 64px;
-  align-self: center;
-  border-radius: 32px;
-  border: 4px solid ${({ theme }) => theme.colors.grayLight};
-
-  ${({ isSelected, selectedColor }) => isSelected && css`
-      border: 4px solid ${transparentize(0.7, selectedColor)};
-  `};
+  align-items: center;
+  margin-right: 4px;
 `;

@@ -1,19 +1,20 @@
 import React, { useCallback, useState } from "react";
-import { ListRenderItem } from "react-native";
 
-import users, { User } from "../../fixtures/users";
-import { UserBill } from "../UserBill";
+import { useBills } from "../../contexts/bills/BillsContext";
+import { Bill } from "../../fixtures/bills";
+import BillCard from "../BillCard";
 import { List } from "./styles";
 
 const Bills: React.FC = () => {
-  const [selectedBill, setSelectedBill] = useState(null);
+  const [bills] = useBills();
+  const [selectedBill, setSelectedBill] = useState<Bill | null>(null);
 
   const handleSlider = useCallback((item) => (): void => {
     setSelectedBill(item);
   }, []);
 
-  const renderItem = useCallback<ListRenderItem<User>>(({ item }) => (
-    <UserBill
+  const renderItem = useCallback(({ item }) => (
+    <BillCard
       id={item.id}
       name={item.name}
       icon={item.icon}
@@ -28,7 +29,7 @@ const Bills: React.FC = () => {
 
   return (
     <List
-      data={users}
+      data={bills}
       renderItem={renderItem}
       keyExtractor={user => String(user.id)}
     />

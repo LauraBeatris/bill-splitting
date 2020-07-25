@@ -18,14 +18,14 @@ const Popup: React.FC<PopupProps> = ({
   handleOnHide,
 }) => (
   <Modal
-    avoidKeyboard
     style={styles.modal}
     isVisible={isOpen}
+    onModalHide={handleOnHide}
+    onModalShow={handleOnShow}
+    avoidKeyboard
+    swipeDirection={["down"]}
     onBackdropPress={hidePopup}
     onSwipeComplete={hidePopup}
-    onModalShow={handleOnShow}
-    onModalHide={handleOnHide}
-    swipeDirection={["down"]}
   >
     <PopupContent>
       {children}

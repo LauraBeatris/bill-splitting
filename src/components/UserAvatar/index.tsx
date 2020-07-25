@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import { ImageSourcePropType } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome5";
 
@@ -6,29 +6,34 @@ import { useTheme } from "../../contexts/theme/ThemeContext";
 import { Badge, IconWrapper, Avatar } from "./styles";
 
 interface UserAvatarProps {
-  isSelected: boolean;
-  avatarSource: ImageSourcePropType;
+  isBillCardSelected: boolean;
   selectedColor: string;
+  setIsBillPaid: Dispatch<SetStateAction<boolean>>;
+  avatarSource: ImageSourcePropType;
 }
 
 const UserAvatar: React.FC<UserAvatarProps> = ({
-  isSelected,
-  avatarSource,
+  isBillCardSelected,
   selectedColor,
+  setIsBillPaid,
+  avatarSource,
 }) => {
   const theme = useTheme();
-  const [selected, setSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const handlePress = (): void => {
-    setSelected(prev => !prev);
+    setIsSelected(prev => !prev);
+    setIsBillPaid(prev => !prev);
   };
 
-  const iconColor = selected ? theme.colors.white : theme.colors.grayLight;
+  const iconColor = (
+    isSelected ? theme.colors.white : theme.colors.grayLight
+  );
 
   return (
     <IconWrapper onPress={handlePress}>
       <Badge
-        isSelected={selected}
+        isSelected={isSelected}
         selectedColor={selectedColor}
       >
         <FontAwesomeIcon name="check" color={iconColor} />
@@ -37,7 +42,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
       <Avatar
         source={avatarSource}
         selectedColor={selectedColor}
-        isSelected={isSelected}
+        isBillCardSelected={isBillCardSelected}
       />
     </IconWrapper>
   );
