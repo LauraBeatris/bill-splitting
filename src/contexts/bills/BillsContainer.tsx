@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from "react";
 
 import initialBills from "../../fixtures/bills";
+import { BillsContextPayload } from "./types";
 import { BillsProvider } from "./BillsContext";
 
 const UserBillsContainer: React.FC = ({ children }) => {
@@ -10,7 +11,7 @@ const UserBillsContainer: React.FC = ({ children }) => {
     setBills(initialBills.filter(bill => bill.name.match(searchText)));
   }, []);
 
-  const payload = useMemo(() => [
+  const payload = useMemo<BillsContextPayload>(() => [
     bills,
     {
       handleSearch,
