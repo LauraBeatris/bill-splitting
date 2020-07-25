@@ -6,7 +6,7 @@ import BillCard from "../BillCard";
 import { List } from "./styles";
 
 const Bills: React.FC = () => {
-  const [bills] = useBills();
+  const { bills } = useBills();
   const [selectedBill, setSelectedBill] = useState<Bill | null>(null);
 
   const handleSlider = useCallback((item) => (): void => {
