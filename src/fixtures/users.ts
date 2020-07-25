@@ -27,10 +27,31 @@ const users: User[] = [
     id: 3,
     name: "Katie",
     icon: katie,
-  }, {
+  },
+  {
     id: 4,
     name: "James",
     icon: james,
+  },
+  {
+    id: 5,
+    name: "Junior",
+    icon: james,
+  },
+  {
+    id: 6,
+    name: "Laura",
+    icon: katie,
+  },
+  {
+    id: 7,
+    name: "Diego",
+    icon: katie,
+  },
+  {
+    id: 8,
+    name: "Bruna",
+    icon: katie,
   },
 ];
 
