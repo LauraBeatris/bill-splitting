@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     borderColor: theme.colors.dark,
   },
   column: {
-    width: "75%",
+    width: "100%",
   },
   fullWidth: {
     width: "100%",
