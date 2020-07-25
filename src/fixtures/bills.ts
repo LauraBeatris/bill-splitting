@@ -1,41 +1,31 @@
-import { ImageSourcePropType } from "react-native";
-
-import emma from "../assets/emma.jpeg";
-import katie from "../assets/katie.jpeg";
-import tom from "../assets/tom.jpeg";
-import james from "../assets/james.jpeg";
+import users, { User } from "./users";
 
 export interface Bill {
   id: number;
-  name: string;
-  icon: ImageSourcePropType;
+  user: User;
   value: number;
 }
 
-const Users: Bill[] = [
+const bills: Bill[] = [
   {
     id: 1,
-    name: "Tom",
-    icon: tom,
+    user: users[0],
     value: 20,
   },
   {
     id: 2,
-    name: "Emma",
-    icon: emma,
+    user: users[1],
     value: 12,
   },
   {
     id: 3,
-    name: "Katie",
-    icon: katie,
+    user: users[2],
     value: 35,
   }, {
     id: 4,
-    name: "James",
-    icon: james,
+    user: users[3],
     value: 12,
   },
 ];
 
-export default Users;
+export default bills;
