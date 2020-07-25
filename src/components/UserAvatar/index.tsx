@@ -10,6 +10,7 @@ interface UserAvatarProps {
   selectedColor: string;
   setIsBillPaid: Dispatch<SetStateAction<boolean>>;
   avatarSource: ImageSourcePropType;
+  onPress?: () => void;
 }
 
 const UserAvatar: React.FC<UserAvatarProps> = ({
@@ -17,6 +18,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
   selectedColor,
   setIsBillPaid,
   avatarSource,
+  onPress,
 }) => {
   const theme = useTheme();
   const [isSelected, setIsSelected] = useState(false);
@@ -24,6 +26,10 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
   const handlePress = (): void => {
     setIsSelected(prev => !prev);
     setIsBillPaid(prev => !prev);
+
+    if (onPress) {
+      onPress();
+    }
   };
 
   const iconColor = (
