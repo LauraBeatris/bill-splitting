@@ -12,6 +12,8 @@
 
 > Split a bill with a group of users
 
+Special thanks to [Andrea Hock](https://dribbble.com/andreahock) who created this [amazing layout](https://dribbble.com/shots/12035522--Bill-Splitting-App) and gave me the permission to develop it. 💛
+
 ---
 
 # :pushpin: Table of Contents
