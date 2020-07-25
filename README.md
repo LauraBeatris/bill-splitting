@@ -12,6 +12,8 @@
 
 > Split a bill with a group of users
 
+Special thanks to [Andrea Hock](https://dribbble.com/andreahock) who created this [amazing layout](https://dribbble.com/shots/12035522--Bill-Splitting-App) and gave me the permission to develop it. 💛
+
 ---
 
 # :pushpin: Table of Contents
@@ -75,7 +77,7 @@ yarn start
 
 # :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the the [Marketplace RN](https://github.com/LauraBeatris/bill-splitting/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/LauraBeatris/bill-splitting/blob/master/CONTRIBUTING.md) to find out about the coding standards.
+Feel free to **file a new issue** with a respective title and description on the the [Bill Splitting](https://github.com/LauraBeatris/bill-splitting/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/LauraBeatris/bill-splitting/blob/master/CONTRIBUTING.md) to find out about the coding standards.
 
 # :tada: Contributing
 
