@@ -19,4 +19,10 @@ export const styles = StyleSheet.create({
   input: {
     borderColor: theme.colors.dark,
   },
+  column: {
+    width: "75%",
+  },
+  fullWidth: {
+    width: "100%",
+  },
 });
