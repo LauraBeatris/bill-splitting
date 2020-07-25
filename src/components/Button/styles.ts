@@ -7,7 +7,7 @@ export const Container = styled.TouchableOpacity`
   left: 0;
   right: 0;
   bottom: 0;
-  height: 60px;
+  min-height: 60px;
   align-items: center;
   background: ${({ theme }) => theme.colors.yellow};
   padding: 20px 0 ${Platform.OS === "ios" && `${getBottomSpace()}px`};
