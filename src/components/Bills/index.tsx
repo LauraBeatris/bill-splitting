@@ -18,7 +18,7 @@ const Bills: React.FC = () => {
       id={item.id}
       name={item.name}
       icon={item.icon}
-      bill={item.bill}
+      value={item.value}
       isSelected={item.id === selectedBill?.id}
       handleSlider={handleSlider(item)}
     />
