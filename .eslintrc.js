@@ -22,7 +22,11 @@ module.exports = {
     "space-before-function-paren": 0,
     quotes: [2, "double", "avoid-escape"],
     indent: ["error", 2, { SwitchCase: 1 }],
-    "no-unused-vars": isCI ? ["error", { argsIgnorePattern: "^_" }] : 1,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": [2, {
+      argsIgnorePattern: "^_",
+      varsIgnorePattern: "^_",
+    }],
     "react/destructuring-assignment": 0,
     "no-console": isCI ? 2 : 1,
     "arrow-parens": 0,
