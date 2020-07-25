@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { StyleSheet } from "react-native";
+import EStyleSheet from "react-native-extended-stylesheet";
 
 export const PopupContent = styled.View`
   background-color: white;
@@ -11,7 +11,7 @@ export const PopupContent = styled.View`
   border-color: rgba(0, 0, 0, 0.1);
 `;
 
-export const styles = StyleSheet.create({
+export const styles = EStyleSheet.create({
   modal: {
     justifyContent: "flex-end",
     margin: 0,

@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
+import EStyleSheet from "react-native-extended-stylesheet";
 
 import theme from "../../styles/theme";
 
@@ -15,14 +15,15 @@ export const Content = styled.View`
   flex: 1;
 `;
 
-export const styles = StyleSheet.create({
+export const styles = EStyleSheet.create({
+  $rowWidth: "100%",
   input: {
-    borderColor: theme.colors.dark,
+    borderColor: "$darkColor",
+  },
+  row: {
+    width: "$rowWidth",
   },
   column: {
-    width: "100%",
-  },
-  fullWidth: {
     width: "100%",
   },
 });

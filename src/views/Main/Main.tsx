@@ -46,7 +46,7 @@ const Main: React.FC = () => {
         />
         <Bills />
 
-        <Flex direction="column" align="end" style={styles.fullWidth}>
+        <Flex direction="column" align="end" style={styles.row}>
           <Flex direction="row" justify="between" style={styles.column}>
             <Title>Total</Title>
 
