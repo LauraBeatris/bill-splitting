@@ -17,7 +17,12 @@ import { Container, Content, styles } from "./styles";
 
 const Main: React.FC = () => {
   const [openPopup] = usePopup();
-  const [_, { handleSearch }] = useBills();
+
+  const {
+    totalOutcome,
+    paidAmount,
+    handleSearch,
+  } = useBills();
 
   const handlePopup = (): void => {
     openPopup({
@@ -41,8 +46,6 @@ const Main: React.FC = () => {
         />
         <Bills />
 
-        <WhiteSpace size="md" />
-
         <Flex direction="column" align="end" style={styles.fullWidth}>
           <Flex direction="row" justify="between" style={styles.column}>
             <Title>Total</Title>
@@ -50,19 +53,26 @@ const Main: React.FC = () => {
             <WingBlank />
 
             <Title fontWeight="regular">
-              $55
+              $
+              {totalOutcome}
             </Title>
           </Flex>
           <WhiteSpace />
-          <Flex direction="row" justify="between" style={styles.column}>
-            <Title fontWeight="light">Received</Title>
 
-            <WingBlank />
+          {
+            !!paidAmount && (
+              <Flex direction="row" justify="between" style={styles.column}>
+                <Title fontWeight="light">Received</Title>
 
-            <Title fontWeight="light">
-              $555
-            </Title>
-          </Flex>
+                <WingBlank />
+
+                <Title fontWeight="light">
+                  $
+                  {paidAmount}
+                </Title>
+              </Flex>
+            )
+          }
         </Flex>
       </Content>
 
