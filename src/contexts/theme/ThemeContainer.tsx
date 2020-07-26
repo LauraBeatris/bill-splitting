@@ -1,8 +1,8 @@
 import React from "react";
 import { Provider as AntThemeProvider } from "@ant-design/react-native";
-import { ThemeProvider } from "styled-components";
 import EStyleSheet from "react-native-extended-stylesheet";
 
+import { ThemeProvider } from "../../settings/styled-components";
 import antTheme from "../../styles/antTheme";
 import theme from "../../styles/theme";
 

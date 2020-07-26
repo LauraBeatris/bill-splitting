@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/native";
+import styled, { css } from "../../settings/styled-components";
 
 interface TypographyProps {
   fontSize?: number;

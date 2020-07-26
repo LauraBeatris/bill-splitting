@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components/native";
 import { transparentize, shade } from "polished";
+
+import styled, { css } from "../../settings/styled-components";
 
 interface ItemProps {
   selectedColor: string;

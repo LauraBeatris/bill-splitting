@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components/native";
 import { transparentize } from "polished";
+
+import styled, { css } from "../../settings/styled-components";
 
 export const IconWrapper = styled.TouchableOpacity`
   position: relative;

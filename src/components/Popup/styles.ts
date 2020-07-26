@@ -1,5 +1,6 @@
-import styled from "styled-components/native";
 import EStyleSheet from "react-native-extended-stylesheet";
+
+import styled from "../../settings/styled-components";
 
 export const PopupContent = styled.View`
   background-color: white;

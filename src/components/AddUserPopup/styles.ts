@@ -1,7 +1,8 @@
-import styled from "styled-components/native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { FlatList } from "react-native";
+
+import styled from "../../settings/styled-components";
 
 export const List = styled(FlatList).attrs({
   contentContainerStyle: {
