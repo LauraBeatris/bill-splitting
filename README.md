@@ -56,10 +56,10 @@ Run the following command in order to start the application in a development env
 
 ```
   // Install the application in a Android device
-  react-native run-android
+  yarn react-native run-android
 
   // Install the application in a IOS device
-  react-native run-android
+  yarn react-native run-android
 ```
 
 After the build process, the metro bundler will start the app automatically but
