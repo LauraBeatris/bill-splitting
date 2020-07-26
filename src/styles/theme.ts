@@ -23,6 +23,8 @@ const theme = {
   },
 };
 
+export type FONT_WEIGHT = keyof typeof theme.fonts.families;
+
 export type ThemeTypes = typeof theme;
 
 export default theme;

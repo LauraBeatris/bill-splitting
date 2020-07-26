@@ -1,9 +1,10 @@
 import styled, { css } from "../../settings/styled-components";
+import { FONT_WEIGHT } from "../theme";
 
 interface TypographyProps {
   fontSize?: number;
   fontFamily?: string;
-  fontWeight?: string;
+  fontWeight?: FONT_WEIGHT;
   color?: string;
 }
 
